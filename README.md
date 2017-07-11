@@ -1,1 +1,0 @@
-# hotelmessenger-testpartner
