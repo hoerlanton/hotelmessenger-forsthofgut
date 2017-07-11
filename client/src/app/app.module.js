@@ -11,7 +11,8 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
-var tasks_component_1 = require("./components/tasks/tasks.component");
+var dashboard_component_1 = require("./components/dashboard/dashboard.component");
+var angular2_flash_messages_1 = require("angular2-flash-messages");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,12 +21,13 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         declarations: [
-            app_component_1.AppComponent, tasks_component_1.TasksComponent
+            app_component_1.AppComponent, dashboard_component_1.DashboardComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            angular2_flash_messages_1.FlashMessagesModule
         ],
         providers: [],
         bootstrap: [app_component_1.AppComponent]

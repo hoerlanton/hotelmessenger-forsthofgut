@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<flash-messages></flash-messages>\n<tasks></tasks>\n\n\n"
+module.exports = "<flash-messages></flash-messages>\n<dashboard></dashboard>\n\n\n"
 
 /***/ }),
 
@@ -43,7 +43,7 @@ module.exports = "<flash-messages></flash-messages>\n<tasks></tasks>\n\n\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_task_service__ = __webpack_require__("../../../../../src/app/services/task.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__ = __webpack_require__("../../../../../src/app/services/dashboard.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -64,7 +64,7 @@ AppComponent = __decorate([
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")],
-        providers: [__WEBPACK_IMPORTED_MODULE_1__services_task_service__["a" /* TaskService */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__["a" /* DashboardService */]]
     })
 ], AppComponent);
 
@@ -81,7 +81,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_tasks_tasks_component__ = __webpack_require__("../../../../../src/app/components/tasks/tasks.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
@@ -106,7 +106,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__components_tasks_tasks_component__["a" /* TasksComponent */]
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__["a" /* DashboardComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -123,7 +123,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/tasks/tasks.component.css":
+/***/ "../../../../../src/app/components/dashboard/dashboard.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -131,7 +131,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h3 {\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin: 0 auto;\n    display: inline-block;\n    float: left;\n    position: relative;\n    left: 20%;\n}\n\n.row1 {\n    overflow: auto;\n    height:614px;\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n}\n\n.form-group1 {\n    overflow: auto;\n    height: 330px;\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n}\n\n.row1 .col {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.row1 .col:nth-child(2) {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.row1 .col:nth-child(3) {\n    -webkit-box-ordinal-group: 3;\n        -ms-flex-order: 2;\n            order: 2;\n}\n\n.row {\n    border-bottom-style: solid;\n    border-bottom: 10px;\n    border-bottom-color: #ffffff;\n}\n", ""]);
+exports.push([module.i, "h3 {\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin: 0 auto;\n    display: inline-block;\n    float: left;\n    position: relative;\n    left: 20%;\n}\n\n.row1 {\n    overflow: auto;\n    height:614px;\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n}\n\n.form-group1 {\n    overflow: auto;\n    height: 330px;\n    margin: 0 auto;\n    display: inline-block;\n    width: 100%;\n}\n\n.row1 .col {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.row1 .col:nth-child(1) {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.row1 .col:nth-child(2) {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.row1 .col:nth-child(3) {\n    -webkit-box-ordinal-group: 3;\n        -ms-flex-order: 2;\n            order: 2;\n}\n\n.row {\n    border-bottom-style: solid;\n    border-bottom: 10px;\n    border-bottom-color: #ffffff;\n}\n\n.navbar-right {\n    float: right;\n}\n", ""]);
 
 // exports
 
@@ -141,19 +141,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/tasks/tasks.component.html":
+/***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n<head>\n    <title>Dashboard</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n    <script src=\"https://code.jquery.com/jquery-1.12.4.min.js\"   integrity=\"sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=\"   crossorigin=\"anonymous\"></script>\n</head>\n\n<body>\n\n<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n                <img alt=\"Brand\" href=\"http://servicio.io\" src=\"http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png\" style=\"height: 45px; width: auto; margin-top: 0px\">\n        </div>\n    </div>\n</nav>\n\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n    <%= errMsg  %>\n</div>\n\n<div class=\"row\">\n    <div class=\"col-md-4\" style=\"background-color: #f3efe4; padding-top: 20px; \"><h3>Angemeldete Gäste</h3>\n        <div class=\"row1\" style=\"padding-top: 20px\">\n            <div *ngFor=\"let task of tasks\">\n                <div *ngIf=\"task.signed_up\">\n                    <img src=\"{{task.profile_pic}}\" style=\" width: 60px; height: 60px; position: relative; border-radius: 50%; margin: 5px; margin-left: 60%\">\n                    <p style=\"padding-left:20px\">{{\"Name: \" + task.first_name + \" \"}}{{task.last_name}}<br>{{\"Geschlecht: \" + task.gender}}<br>{{\"Kann zahlen: \" + task.is_payment_enabled}}<br>{{\"Heimat: \" + task.locale}}<br>{{\"FacebookID: \" + task.senderId}}<br>{{\"Angemeldet am: \" + task.signed_up_at}}<br>{{\"Zeitzone: \" + task.timezone}}<br></p>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"col-md-4\" style=\"background-color: #0a7a74;\">\n        <div class=\"row\" style=\"padding-top: 20px; padding-bottom: 10px; border-bottom: 1px solid white;\">\n            <h3 style=\"color: white\" align=\"center\">Nachricht an Gäste senden</h3>\n            <form class=\"SendMessage\" (submit)=\"addTask($event)\">\n                <div class=\"col-xs-12\" style=\"padding: 40px\">\n                    <div class=\"form-group\">\n                        <input type=\"text\" style=\"margin-bottom: 10px\" [(ngModel)]=\"title\" name=\"title\" id=\"nachrichtSenden\" class=\"form-control\" required>\n                        <input type=\"file\" style=\"float: left; margin-top: 10px; color: white\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n                        <button style=\" background-color: white; float: right; color: #0a7a74 \" type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">DATEI ANHÄNGEN</button>\n                    </div>\n                </div>\n                <div class=\"col-xs-12\" style=\"padding-left: 40px\">\n                    <div class=\"form-group\">\n                        <button style=\" background-color: white; color: #0a7a74 \" type=\"submit\" class=\"btn btn-send\">JETZT SENDEN</button> <!--Title for button is same as that of the page-->\n                    </div>\n                </div>\n            </form>\n        </div>\n        <h3 style=\"color: white; text-align: center; padding-top: 20px; border-top-style: solid; border-top: 10px; border-top-color: #ffffff\">Gesendete Nachrichten</h3>\n            <div class=\"form-group1\">\n                <div *ngFor=\"let Messages of sentMessages\">\n                    <p style=\"color: #ffffff; padding-top: 30px; padding-left: 20px\">Nachricht gesendet am: {{Messages.date}}<br><br>Nachricht: {{Messages.text}}</p>\n                </div>\n            </div>\n    </div>\n\n    <div class=\"col-md-4\" style=\"background-color: #f3efe4; padding-top: 20px; \"><h3>Abgemeldete Gäste</h3>\n        <div class=\"row1\" style=\"padding-top: 20px\">\n            <div *ngFor=\"let task of tasks\">\n                <div *ngIf=\"!task.signed_up\">\n                    <img src=\"{{task.profile_pic}}\" style=\" width: 60px; height: 60px; position: relative; border-radius: 50%; margin: 5px; margin-left: 60%\">\n                    <p style=\"padding-left:20px\">{{\"Name: \" + task.first_name + \" \"}}{{task.last_name}}<br>{{\"Geschlecht: \" + task.gender}}<br>{{\"Kann zahlen: \" + task.is_payment_enabled}}<br>{{\"Heimat: \" + task.locale}}<br>{{\"FacebookID: \" + task.senderId}}<br>{{\"Angemeldet am: \" + task.signed_up_at}}<br>{{\"Zeitzone: \" + task.timezone}}<br></p>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n</body>\n</html>\n"
+module.exports = "<html>\n<head>\n    <title>Dashboard</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n    <script src=\"https://code.jquery.com/jquery-1.12.4.min.js\"   integrity=\"sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=\"   crossorigin=\"anonymous\"></script>\n</head>\n\n<body>\n\n<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n                <img alt=\"Brand\" href=\"http://servicio.io\" src=\"http://servicio.io/wp-content/uploads/2016/05/servicio-logo-hellblau-auto-ohne-hintergrund-1.png\" style=\"height: 45px; width: auto; margin-top: 0px; margin-right: 50px\">\n            <img alt=\"Partner\" href=\"https://www.forsthofgut.at\" src=\"http://servicio.io/wp-content/uploads/2016/05/logo-2014-transparent-website-xl-1204272.png\" style=\"height: 45px; width: auto; margin-top: 5px; margin-bottom: 5px; margin-right: 5px;float: right; text-align: right; display:table-cell; vertical-align:middle;\">\n    </div>\n</nav>\n\n<div id=\"charge-error\" class=\"alert alert-danger <% if ( !errMsg ) { %> hidden <% } %>\">\n    <%= errMsg  %>\n</div>\n\n<div class=\"row\">\n    <div class=\"col-md-4\" style=\"background-color: #f3efe4; padding-top: 20px; \"><h3>Angemeldete Gäste</h3>\n        <div class=\"row1\" style=\"padding-top: 20px\">\n            <div *ngFor=\"let guest of guests\">\n                <div *ngIf=\"guest.signed_up\">\n                    <img src=\"{{guest.profile_pic}}\" style=\" width: 60px; height: 60px; position: relative; border-radius: 50%; margin: 5px; margin-left: 60%\">\n                    <p style=\"padding-left:20px\">{{\"Name: \" + guest.first_name + \" \"}}{{guest.last_name}}<br>{{\"Geschlecht: \" + guest.gender}}<br>{{\"Kann zahlen: \" + guest.is_payment_enabled}}<br>{{\"Heimat: \" + guest.locale}}<br>{{\"FacebookID: \" + guest.senderId}}<br>{{\"Angemeldet am: \" + guest.signed_up_at}}<br>{{\"Zeitzone: \" + guest.timezone}}<br></p>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"col-md-4\" style=\"background-color: #0a7a74;\">\n        <div class=\"row\" style=\"padding-top: 20px; padding-bottom: 10px; border-bottom: 1px solid white;\">\n            <h3 style=\"color: white\" align=\"center\">Nachricht an Gäste senden</h3>\n            <form class=\"SendMessage\" (submit)=\"sendMessage($event)\">\n                <div class=\"col-xs-12\" style=\"padding: 40px\">\n                    <div class=\"form-group\">\n                        <input type=\"text\" style=\"margin-bottom: 10px\" [(ngModel)]=\"title\" name=\"title\" id=\"nachrichtSenden\" class=\"form-control\" required>\n                        <input type=\"file\" style=\"float: left; margin-top: 10px; color: white\" (change)=\"fileChangeEvent($event)\" placeholder=\"Upload file...\" />\n                        <button style=\" background-color: white; float: right; color: #0a7a74 \" type=\"button\" class=\"btn btn-send\" (click)=\"upload()\">DATEI ANHÄNGEN</button>\n                    </div>\n                </div>\n                <div class=\"col-xs-12\" style=\"padding-left: 40px\">\n                    <div class=\"form-group\">\n                        <button style=\" background-color: white; color: #0a7a74 \" type=\"submit\" class=\"btn btn-send\">JETZT SENDEN</button> <!--Title for button is same as that of the page-->\n                    </div>\n                </div>\n            </form>\n        </div>\n        <h3 style=\"color: white; text-align: center; padding-top: 20px; border-top-style: solid; border-top: 10px; border-top-color: #ffffff\">Gesendete Nachrichten</h3>\n            <div class=\"form-group1\">\n                <div *ngFor=\"let Messages of sentMessages\">\n                    <p style=\"color: #ffffff; padding-top: 30px; padding-left: 20px\">Nachricht gesendet am: {{Messages.date}}<br><br>Nachricht: {{Messages.text}}</p>\n                </div>\n            </div>\n    </div>\n\n    <div class=\"col-md-4\" style=\"background-color: #f3efe4; padding-top: 20px; \"><h3>Abgemeldete Gäste</h3>\n        <div class=\"row1\" style=\"padding-top: 20px\">\n            <div *ngFor=\"let guest of guests\">\n                <div *ngIf=\"!guest.signed_up\">\n                    <img src=\"{{guest.profile_pic}}\" style=\" width: 60px; height: 60px; position: relative; border-radius: 50%; margin: 5px; margin-left: 60%\">\n                    <p style=\"padding-left:20px\">{{\"Name: \" + guest.first_name + \" \"}}{{guest.last_name}}<br>{{\"Geschlecht: \" + guest.gender}}<br>{{\"Kann zahlen: \" + guest.is_payment_enabled}}<br>{{\"Heimat: \" + guest.locale}}<br>{{\"FacebookID: \" + guest.senderId}}<br>{{\"Angemeldet am: \" + guest.signed_up_at}}<br>{{\"Zeitzone: \" + guest.timezone}}<br></p>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n</body>\n</html>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/tasks/tasks.component.ts":
+/***/ "../../../../../src/app/components/dashboard/dashboard.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_task_service__ = __webpack_require__("../../../../../src/app/services/task.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__ = __webpack_require__("../../../../../src/app/services/dashboard.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
@@ -161,7 +161,7 @@ module.exports = "<html>\n<head>\n    <title>Dashboard</title>\n    <meta name=\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TasksComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -177,44 +177,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TasksComponent = (function () {
-    function TasksComponent(taskService, http, _flashMessagesService) {
+var DashboardComponent = (function () {
+    function DashboardComponent(dashboardService, http, _flashMessagesService) {
         var _this = this;
-        this.taskService = taskService;
+        this.dashboardService = dashboardService;
         this.http = http;
         this._flashMessagesService = _flashMessagesService;
         this.filesToUpload = [];
-        this.taskService.getTasks()
-            .subscribe(function (tasks) {
-            _this.tasks = tasks;
+        this.dashboardService.getGuests()
+            .subscribe(function (guests) {
+            _this.guests = guests;
         });
-        this.taskService.getMessages()
+        this.dashboardService.getMessages()
             .subscribe(function (sentMessages) {
             _this.sentMessages = sentMessages;
         });
     }
-    TasksComponent.prototype.addTask = function (event) {
+    DashboardComponent.prototype.sendMessage = function (event) {
         var _this = this;
         event.preventDefault();
         this.dateGenerated = new Date();
-        var newTask = {
+        var newMessage = {
             text: this.title,
             date: this.dateGenerated
         };
-        console.log(newTask);
-        this.taskService.addTask(newTask)
+        console.log(newMessage);
+        this.dashboardService.sendMessage(newMessage)
             .subscribe(function (Messages) {
             _this.sentMessages.push(Messages);
-            _this.title = "";
+            _this.title = '';
         });
     };
-    TasksComponent.prototype.ngOnInit = function () {
+    DashboardComponent.prototype.ngOnInit = function () {
     };
-    TasksComponent.prototype.upload = function () {
+    DashboardComponent.prototype.upload = function () {
         var _this = this;
         var formData = new FormData();
         var files = this.filesToUpload;
-        formData.append("uploads[]", files[0], files[0]['name']);
+        formData.append('uploads[]', files[0], files[0]['name']);
         this.http.post('/upload', formData)
             .map(function (files) { return files.json(); }).map(function (res) {
             // 1st parameter is a flash message text
@@ -223,29 +223,29 @@ var TasksComponent = (function () {
         })
             .subscribe(function (files) { return console.log('files', files); });
     };
-    TasksComponent.prototype.fileChangeEvent = function (fileInput) {
+    DashboardComponent.prototype.fileChangeEvent = function (fileInput) {
         this.filesToUpload = fileInput.target.files;
         //this.successMsg = "Hoi" + fileInput.target.files[0]['name'];
         //console.log(this.successMsg);
         //this.product.photo = fileInput.target.files[0]['name'];
     };
-    return TasksComponent;
+    return DashboardComponent;
 }());
-TasksComponent = __decorate([
+DashboardComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'tasks',
-        template: __webpack_require__("../../../../../src/app/components/tasks/tasks.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/tasks/tasks.component.css")]
+        selector: 'dashboard',
+        template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_task_service__["a" /* TaskService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_task_service__["a" /* TaskService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
-], TasksComponent);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__["a" /* DashboardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__["a" /* DashboardService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+], DashboardComponent);
 
 var _a, _b, _c;
-//# sourceMappingURL=tasks.component.js.map
+//# sourceMappingURL=dashboard.component.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/app/services/task.service.ts":
+/***/ "../../../../../src/app/services/dashboard.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -253,7 +253,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TaskService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -266,35 +266,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TaskService = (function () {
-    function TaskService(http) {
+var DashboardService = (function () {
+    function DashboardService(http) {
         this.http = http;
         console.log('Task service initialized!');
     }
-    TaskService.prototype.getTasks = function () {
+    DashboardService.prototype.getGuests = function () {
         return this.http.get('guests')
             .map(function (res) { return res.json(); });
     };
-    TaskService.prototype.getMessages = function () {
+    DashboardService.prototype.getMessages = function () {
         return this.http.get('guestsMessages')
             .map(function (res) { return res.json(); });
     };
-    TaskService.prototype.addTask = function (newTask) {
+    DashboardService.prototype.sendMessage = function (newMessage) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
-        return this.http.post('guestsMessage', newTask, { headers: headers })
+        return this.http.post('guestsMessage', newMessage, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    return TaskService;
+    return DashboardService;
 }());
-TaskService = __decorate([
+DashboardService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
-], TaskService);
+], DashboardService);
 
 var _a;
-//# sourceMappingURL=task.service.js.map
+//# sourceMappingURL=dashboard.service.js.map
 
 /***/ }),
 
