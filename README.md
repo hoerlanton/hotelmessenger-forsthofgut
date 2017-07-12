@@ -12,5 +12,6 @@ More information on: www.servicio.io
 -  Change AppID + PageID in wlanlandingpage.ejs file Line 18, 52, 53, 76, 77
 -  Text OK in wlanlandingpage?
 -  Change Message us button link
+-  Changing landingpage Link in header
 
 ## Data for particular testpartner bot
