@@ -30,11 +30,11 @@ var newFileUploaded = false;
 router.get('/guestsMessages', function(req, res, next) {
     console.log("guestsMessages get called");
     //Get guests from Mongo DB
-    db.testMessages.find(function(err, testMessage){
+    db.forsthofgutMessages.find(function(err, forsthofgutMessages){
         if (err){
             res.send(err);
         }
-        res.json(testMessage);
+        res.json(forsthofgutMessages);
     });
 });
 
@@ -42,11 +42,11 @@ router.get('/guestsMessages', function(req, res, next) {
 router.get('/guests', function(req, res, next) {
     console.log("guests get called");
     //Get guests from Mongo DB
-    db.testGaeste.find(function(err, testGaeste){
+    db.forsthofgutGaeste.find(function(err, forsthofgutGaeste){
         if (err){
             res.send(err);
         }
-        res.json(testGaeste);
+        res.json(forsthofgutGaeste);
     });
 });
 
@@ -63,7 +63,7 @@ router.post('/guests', function(req, res, next) {
             error: "Bad data"
         });
     } else {
-        db.testGaeste.save(guest, function (err, guest) {
+        db.forsthofgutGaeste.save(guest, function (err, guest) {
             if (err) {
                 res.send(err);
             }
@@ -80,15 +80,15 @@ router.put('/guests', function(req, res, next) {
     var guestUpdateString = JSON.stringify(guestUpdate);
     var guestUpdateHoi = guestUpdateString.slice(2, -5);
     console.log(guestUpdateHoi);
-    db.testGaeste.update({
+    db.forsthofgutGaeste.update({
         senderId:  guestUpdateHoi  },
         {
             $set: { signed_up: false }
-        }, { multi: true }, function (err, testGaeste){
+        }, { multi: true }, function (err, forsthofgutGaeste){
             if(err) {
                 console.log("error: " + err);
             } else {
-                console.log(testGaeste);
+                console.log(forsthofgutGaeste);
             }});
 });
 
@@ -109,15 +109,15 @@ router.post('/guestsMessage', function(req, res, next){
         if (err){
             errMsg = "Das senden der Nachricht ist nicht möglich. Es sind keine Gäste angemeldet.";
         } else {
-            for (var i = 0; i < testGaeste.length; i++) {
-                if(testGaeste[i].signed_up === true) {
-                    sourceFile.sendBroadcast(testGaeste[i].senderId, broadcast);
+            for (var i = 0; i < forsthofgutGaeste.length; i++) {
+                if(forsthofgutGaeste[i].signed_up === true) {
+                    sourceFile.sendBroadcast(forsthofgutGaeste[i].senderId, broadcast);
                     console.log("New file uploaded status: FINAALLLL!!!! ******" + newFileUploaded);
                     console.log("UploadedFileName: FINAALLLL!!!! ******" + uploadedFileName);
                     //If a new file got attached, also send the attachment
                     if(uploadedFileName !== undefined && newFileUploaded === true) {
                         console.log("sendbroadcastfile runned");
-                        sourceFile.sendBroadcastFile(testGaeste[i].senderId, URLUploadedFile);
+                        sourceFile.sendBroadcastFile(forsthofgutGaeste[i].senderId, URLUploadedFile);
                     }
                 }
             }
@@ -128,11 +128,11 @@ router.post('/guestsMessage', function(req, res, next){
         }
     });
     //Save Message to DB
-    db.testMessages.save(message, function (err, testMessage) {
+    db.forsthofgutMessages.save(message, function (err, forsthofgutMessages) {
         if (err) {
             res.send(err);
         }
-        res.json(testMessage);
+        res.json(forsthofgutMessages);
     });
 });
 
