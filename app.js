@@ -794,8 +794,9 @@ function callSendAPI(messageData) {
       console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
       //If error is because attached file can not be found, DB is not getting updated
       var errorMsgNoDBUpdate = "Failed to fetch the file from the url";
+      var errorMsgNoDBUpdate2 = "Message cannot be empty, must provide valid attachment or text";
       //if error message if that it Failed to fetch the file from the url, function is returned
-      if(body.error.message.indexOf(errorMsgNoDBUpdate) !== -1){
+      if(body.error.message.indexOf(errorMsgNoDBUpdate) !== -1 || body.error.message.indexOf(errorMsgNoDBUpdate2) !== -1){
           return;
       }
       console.log(messageData.recipient.id);
