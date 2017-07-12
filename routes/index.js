@@ -105,7 +105,7 @@ router.post('/guestsMessage', function(req, res, next){
     newFileUploaded = sourceFile.newFileUploaded;
     console.log("New file uploaded status: FINAALLLL!!!!" + newFileUploaded);
     console.log("UploadedFileName: FINAALLLL!!!!" + uploadedFileName);
-    db.testGaeste.find(function(err, testGaeste){
+    db.forsthofgutGaeste.find(function(err, forsthofgutGaeste){
         if (err){
             errMsg = "Das senden der Nachricht ist nicht möglich. Es sind keine Gäste angemeldet.";
         } else {
