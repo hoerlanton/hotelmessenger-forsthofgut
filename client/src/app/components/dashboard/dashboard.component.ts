@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     dateGenerated: any;
     filesToUpload: Array<File> = [];
 
-    constructor(private dashboardService: DashboardService, private http: Http, private _flashMessagesService: FlashMessagesService){
+    constructor(private dashboardService: DashboardService, private http: Http, private _flashMessagesService: FlashMessagesService) {
         this.dashboardService.getGuests()
             .subscribe(guests => {
                this.guests = guests;

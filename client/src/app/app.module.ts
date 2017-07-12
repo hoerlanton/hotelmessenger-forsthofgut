@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     BrowserModule,
     FormsModule,
     HttpModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

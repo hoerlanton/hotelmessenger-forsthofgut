@@ -14,6 +14,9 @@ const
   multer = require('multer'),
   path = require('path');
 
+var moment = require('moment-timezone');
+
+
 //Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
@@ -305,7 +308,10 @@ function receivedAuthentication(event) {
             a["senderId"] = senderID;
             //User is a "angemeldeter Gast" and is able to recieve messages
             a["signed_up"] = true;
-            a["signed_up_at"] = new Date();
+            var time = moment().tz('Europe/Vienna').format();
+            var time2 = time.replace(/T/gi, " | ");
+            var time3 = time2.slice(0, -6);
+            a["signed_up_at"] = time3;
             //Parse JSON object to JSON string
             b = JSON.stringify(a);
         });
@@ -496,7 +502,10 @@ exports.sendBroadcast = function (recipientId, broadcastText) {
 exports.sendBroadcastFile = function (recipientId, URLUploadedFile) {
     console.log(URLUploadedFile);
     var messageData;
-    if (URLUploadedFile.substr(URLUploadedFile.length - 3) === "png" || URLUploadedFile.substr(URLUploadedFile.length - 3) === "jpg") {
+    var imageEnding = "jpg";
+    var imageEnding2 = "png";
+
+    if (URLUploadedFile.indexOf(imageEnding) !== -1 || URLUploadedFile.indexOf(imageEnding2) !== -1 ) {
         messageData = {
             recipient: {
                 id: recipientId

@@ -13,6 +13,7 @@ var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var dashboard_component_1 = require("./components/dashboard/dashboard.component");
 var angular2_flash_messages_1 = require("angular2-flash-messages");
+var angular2_moment_1 = require("angular2-moment");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            angular2_flash_messages_1.FlashMessagesModule
+            angular2_flash_messages_1.FlashMessagesModule,
+            angular2_moment_1.MomentModule
         ],
         providers: [],
         bootstrap: [app_component_1.AppComponent]
