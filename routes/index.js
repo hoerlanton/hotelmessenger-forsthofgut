@@ -117,7 +117,7 @@ router.post('/guestsMessage', function(req, res, next){
                     //If a new file got attached, also send the attachment
                     if(uploadedFileName !== undefined && newFileUploaded === true) {
                         console.log("sendbroadcastfile runned");
-                        var uploadedFileNameSplitted = sourceFile.uploadedFileName.split("*");
+                        var uploadedFileNameSplitted = uploadedFileName.split("*");
                         var uploadedFileWithoutNumber = uploadedFileNameSplitted[uploadedFileNameSplitted.length - 1];
                         message.text += " Datei angehängt: " + uploadedFileWithoutNumber;
                         sourceFile.sendBroadcastFile(forsthofgutGaeste[i].senderId, URLUploadedFile);
@@ -130,6 +130,7 @@ router.post('/guestsMessage', function(req, res, next){
             sourceFile.newFileUploaded = false;
         }
     });
+
     //Save Message to DB
     db.forsthofgutMessages.save(message, function (err, forsthofgutMessages) {
         if (err) {
