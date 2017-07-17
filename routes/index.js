@@ -117,7 +117,7 @@ router.post('/guestsMessage', function(req, res, next){
                     //If a new file got attached, also send the attachment
                     if(uploadedFileName !== undefined && newFileUploaded === true) {
                         console.log("sendbroadcastfile runned");
-                        message.text += "Nachricht angehängt: " + uploadedFileName;
+                        message.text += "Datei angehängt: " + uploadedFileName.substring(16);
                         sourceFile.sendBroadcastFile(forsthofgutGaeste[i].senderId, URLUploadedFile);
                     }
                 }
