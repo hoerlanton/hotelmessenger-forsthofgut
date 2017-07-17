@@ -62,7 +62,7 @@ var storage = multer.diskStorage({
     },
     // Rename of file
     filename: function (req, file, cb) {
-        cb(null, Math.random() + "*" + file.originalname.replace(/ /g, ""))
+        cb(null, Math.random() + "*" + file.originalname.replace(/ /g, ""));
     }
 });
 //Store uploaded files - destination set / name of file set
