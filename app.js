@@ -12,9 +12,8 @@ const
   routes = require('./routes/index'),
   app = express(),
   multer = require('multer'),
-  path = require('path');
-
-var moment = require('moment-timezone');
+  path = require('path'),
+  moment = require('moment-timezone');
 
 
 //Bodyparser middleware

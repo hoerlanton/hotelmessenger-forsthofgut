@@ -103,6 +103,14 @@ router.post('/guestsMessage', function(req, res, next){
     var URLUploadedFile = String(config.get('serverURL') + "/uploads/" + uploadedFileName);
     console.log("New file uploaded status:" + newFileUploaded);
     newFileUploaded = sourceFile.newFileUploaded;
+    if(uploadedFileName !== undefined && newFileUploaded === true) {
+        var uploadedFileNameSplitted = uploadedFileName.split("*");
+        console.log(" uploadedFileNameSplitted: " + uploadedFileNameSplitted);
+        var uploadedFileWithoutNumber = uploadedFileNameSplitted[uploadedFileNameSplitted.length - 1];
+        console.log(" uploadedFileWithoutNumber: " + uploadedFileWithoutNumber);
+        message.text += " | Folgende Datei wurde angehängt: " + uploadedFileWithoutNumber;
+        console.log("messagetext1:" + message.text);
+    }
     console.log("New file uploaded status: FINAALLLL!!!!" + newFileUploaded);
     console.log("UploadedFileName: FINAALLLL!!!!" + uploadedFileName);
     db.forsthofgutGaeste.find(function(err, forsthofgutGaeste){
@@ -117,9 +125,6 @@ router.post('/guestsMessage', function(req, res, next){
                     //If a new file got attached, also send the attachment
                     if(uploadedFileName !== undefined && newFileUploaded === true) {
                         console.log("sendbroadcastfile runned");
-                        var uploadedFileNameSplitted = uploadedFileName.split("*");
-                        var uploadedFileWithoutNumber = uploadedFileNameSplitted[uploadedFileNameSplitted.length - 1];
-                        message.text += " Datei angehängt: " + uploadedFileWithoutNumber;
                         sourceFile.sendBroadcastFile(forsthofgutGaeste[i].senderId, URLUploadedFile);
                     }
                 }
