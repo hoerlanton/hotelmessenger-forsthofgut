@@ -264,7 +264,7 @@ router.post('/guestsMessage', function(req, res, next) {
                                         if (rightMessage.uploaded_file) {
                                             console.log("URLUploadedFile:" + URLUploadedFile);
                                             console.log("rightMessage.uploadedfile: " + rightMessage.uploaded_file);
-                                            sourceFile.sendBroadcastFile(gaesteGlobalSenderID[l], SERVER_URL + "/uploads/" + rightMessage.uploaded_file);
+                                            sourceFile.sendBroadcastFile(gaesteGlobalSenderID[l],  String(config.get('serverURL') + "/uploads/" + rightMessage.uploaded_file));
                                         }
                                     }
                                 }
