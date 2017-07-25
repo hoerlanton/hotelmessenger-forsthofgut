@@ -811,8 +811,6 @@ function callSendAPI(messageData) {
       //Problem with c = is changed everytime the function Call send api is called - when updateDB function is called the value is the same as the call send api is called the last time
       }
     });
-    console.log("NEWFILEUPLOAD ======= >>>> app3" +  exports.newFileUploaded);
-
 }
 
 exports.callSendAPI = callSendAPI;

@@ -232,15 +232,15 @@ router.post('/guestsMessage', function(req, res, next) {
 
                             var minutes = job.cronTime.toString().slice(2, 4);
                             if (minutes.length === 1) {
-                                minutes = "0" + minutes
+                                minutes = "0" + minutes;
                             }
                             var hour = job.cronTime.toString().slice(5, 7);
                             if (hour.length === 1) {
-                                hour = "0" + hour
+                                hour = "0" + hour;
                             }
                             var day = job.cronTime.toString().slice(8, 10);
                             if (day.length === 1) {
-                                day = "0" + day
+                                day = "0" + day;
                             }
                             var monthNumber = job.cronTime.toString().slice(11, 12);
 
@@ -267,20 +267,19 @@ router.post('/guestsMessage', function(req, res, next) {
                                             sourceFile.sendBroadcastFile(gaesteGlobalSenderID[l],  String(config.get('serverURL') + "/uploads/" + rightMessage.uploaded_file));
                                         }
                                     }
+                                    db.forsthofgutScheduledMessages.update({
+                                            text: rightMessage.text },
+                                        {
+                                            $set: {isInThePast: true}
+                                        }, {multi: true}, function (err, message) {
+                                            if (err) {
+                                                console.log("error: " + err);
+                                            } else {
+                                                console.log("Updated successfully, scheduled messages isInThePast var (deleted)");
+                                            }
+                                        });
                                 }
                             }
-                            db.forsthofgutScheduledMessages.update({
-                                    text: rightMessage.text
-                                },
-                                {
-                                    $set: {isInThePast: true}
-                                }, {multi: true}, function (err, message) {
-                                    if (err) {
-                                        console.log("error: " + err);
-                                    } else {
-                                        console.log("Updated successfully, scheduled messages isInThePast var (deleted)");
-                                    }
-                                });
                         });
                     });
                     // Build the post string from an object
