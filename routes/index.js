@@ -129,8 +129,8 @@ router.post('/guestsMessage', function(req, res, next) {
     var message = req.body;
     var dateNow = new Date();
     var dateString = JSON.stringify(dateNow);
-    dateNowFormatted = dateString.slice(1, 20);
-    dateReqFormatted = req.body.date.slice(0, 19);
+    dateNowFormatted = dateString.slice(1, 19);
+    dateReqFormatted = req.body.date.slice(0, 18);
     dateDay = req.body.date.slice(8, 10);
     dateMonth = req.body.date.slice(3, 7);
     dateHour = req.body.date.slice(15, 18);
@@ -163,8 +163,9 @@ router.post('/guestsMessage', function(req, res, next) {
     });
 
     function broadcastMessages() {
-        console.log(dateReqFormatted + "=" + dateNowFormatted);
 
+        console.log(dateReqFormatted + "=" + dateNowFormatted);
+        //If message is not send at least 10 sec later than now, schedule event is not fired
         if (dateReqFormatted !== dateNowFormatted) {
             console.log("scheduled event fired!");
             //Save Message to DB
