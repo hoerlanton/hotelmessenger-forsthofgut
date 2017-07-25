@@ -25,11 +25,22 @@ var DashboardService = (function () {
         return this.http.get('guestsMessages')
             .map(function (res) { return res.json(); });
     };
+    DashboardService.prototype.getScheduledMessages = function () {
+        return this.http.get('guestsScheduledMessages')
+            .map(function (res) { return res.json(); });
+    };
     DashboardService.prototype.sendMessage = function (newMessage) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         console.log(headers);
         return this.http.post('guestsMessage', newMessage, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    DashboardService.prototype.scheduleMessage = function (scheduledMessage) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        console.log(headers);
+        return this.http.post('guestsMessage', scheduledMessage, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     return DashboardService;

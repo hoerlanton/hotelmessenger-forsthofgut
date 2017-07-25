@@ -18,7 +18,12 @@ const
 
 //Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
-app.use(bodyParser.json({ verify: verifyRequestSignature }));
+//{ verify: verifyRequestSignature } deleted from function because it throws errors if JSON.parse function is called
+
+
+//Throws errors if callbacks are not from facebook
+//{ verify: verifyRequestSignature } deleted from function because it throws errors if JSON.parse function is called
+app.use(bodyParser.json());
 
 // para CORN
 app.use(function (req, res, next) {
@@ -110,12 +115,15 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     console.log("console log in app.post upload", 'files', req.files);
     exports.uploadedFileName = req.files[0].filename;
+    //console.log("New file uploaded status:" + newFileUploaded);
     newFileUploaded = true;
-    console.log("New file uploaded status:" + newFileUploaded);
     //Export value to index.js - a new file got uploaded
+    console.log("NEWFILEUPLOAD ======= >>>> app1" +  exports.newFileUploaded);
     exports.newFileUploaded = newFileUploaded;
-    console.log("New file uploaded status:" + newFileUploaded);
-    console.log("New file uploaded status:" + newFileUploaded);
+    console.log("NEWFILEUPLOAD ======= >>>> app2" +  exports.newFileUploaded);
+
+    //console.log("New file uploaded status:" + newFileUploaded);
+    //console.log("New file uploaded status:" + newFileUploaded);
     res.send(req.files);
 });
 
@@ -281,17 +289,16 @@ function receivedAuthentication(event) {
     var reqGet = https.request(optionsget, function (res) {
         console.log("statusCode: ", res.statusCode);
         // uncomment it for header details
-        console.log("headers: ", res.headers);
+        // console.log("headers: ", res.headers);
 
         res.on('data', function (d) {
             console.info('GET result:\n');
             process.stdout.write(d);
             buffer += d;
-            console.log(buffer);
+            // console.log(buffer);
             //parse buffer to JSON object
             a = JSON.parse(buffer);
-            console.log("Data recieving from Send to messenger button" + a);
-            console.log(a.first_name);
+            // console.log("Data recieving from Send to messenger button" + a);
             // When an authentication is received, we'll send a message back to the sender
             // to let them know it was successful.
             sendTextMessage(senderID, "Hallo " +  a.first_name + " " + a.last_name + "! Sie haben sich erfolgreich angemeldet. " +
@@ -315,7 +322,7 @@ function receivedAuthentication(event) {
                 console.error(e);
 
     });
-    setTimeout(postNewUserToDB, 30000);
+    setTimeout(postNewUserToDB, 15000);
 }
 //New User is saved in DB, function called in receivedAuthentication - send to index.js /guests REST-FUL API
 function postNewUserToDB() {
@@ -804,6 +811,8 @@ function callSendAPI(messageData) {
       //Problem with c = is changed everytime the function Call send api is called - when updateDB function is called the value is the same as the call send api is called the last time
       }
     });
+    console.log("NEWFILEUPLOAD ======= >>>> app3" +  exports.newFileUploaded);
+
 }
 
 exports.callSendAPI = callSendAPI;

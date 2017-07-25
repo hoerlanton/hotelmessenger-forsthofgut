@@ -22,6 +22,15 @@ var DashboardComponent = (function () {
         this.http = http;
         this._flashMessagesService = _flashMessagesService;
         this.filesToUpload = [];
+        this.scheduledDate = new Date(2016, 5, 10);
+        this.datepickerOpts = {
+            startDate: new Date(2016, 5, 10),
+            autoclose: true,
+            todayBtn: 'linked',
+            todayHighlight: true,
+            assumeNearbyYear: true,
+            format: 'D, d MM yyyy'
+        };
         this.dashboardService.getGuests()
             .subscribe(function (guests) {
             _this.guests = guests;
@@ -30,7 +39,25 @@ var DashboardComponent = (function () {
             .subscribe(function (sentMessages) {
             _this.sentMessages = sentMessages;
         });
+        this.dashboardService.getScheduledMessages()
+            .subscribe(function (scheduledMessages) {
+            _this.scheduledMessages = scheduledMessages;
+        });
     }
+    DashboardComponent.prototype.clicked = function (event) {
+        var _this = this;
+        console.log(this.scheduledDate);
+        var scheduledMessage = {
+            text: this.title,
+            date: this.scheduledDate.toString(),
+        };
+        console.log(scheduledMessage);
+        this.dashboardService.scheduleMessage(scheduledMessage)
+            .subscribe(function (Messages) {
+            _this.scheduledMessages.push(Messages);
+            _this.title = '';
+        });
+    };
     DashboardComponent.prototype.sendMessage = function (event) {
         var _this = this;
         event.preventDefault();
@@ -73,9 +100,11 @@ DashboardComponent = __decorate([
     core_1.Component({
         selector: 'dashboard',
         templateUrl: 'dashboard.component.html',
-        styleUrls: ['dashboard.component.css']
+        styleUrls: ['dashboard.component.css'],
     }),
     __metadata("design:paramtypes", [dashboard_service_1.DashboardService, http_1.Http, angular2_flash_messages_1.FlashMessagesService])
 ], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
+// html file deleted:
+// {{"Kann zahlen: " + guest.is_payment_enabled}} 
 //# sourceMappingURL=dashboard.component.js.map
