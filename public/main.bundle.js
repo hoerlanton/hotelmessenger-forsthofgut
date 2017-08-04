@@ -10473,8 +10473,6 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__node_modules_bootstrap_timepicker_css_bootstrap_timepicker_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__node_modules_bootstrap_timepicker_css_bootstrap_timepicker_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__node_modules_bootstrap_timepicker_js_bootstrap_timepicker_min_js__ = __webpack_require__("../../../../bootstrap-timepicker/js/bootstrap-timepicker.min.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__node_modules_bootstrap_timepicker_js_bootstrap_timepicker_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__node_modules_bootstrap_timepicker_js_bootstrap_timepicker_min_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_babel_polyfill__ = __webpack_require__("../../../../babel-polyfill/lib/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_babel_polyfill__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10482,7 +10480,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 

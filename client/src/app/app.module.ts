@@ -22,7 +22,6 @@ import '../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicke
 import '../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js';
 import '../../node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css';
 import '../../node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js';
-import 'babel-polyfill';
 
 
 @NgModule({
