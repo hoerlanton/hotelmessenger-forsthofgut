@@ -50,6 +50,7 @@
     "core-js": "^2.4.1",
     "glamorous": "^4.1.0",
     "glamor": "^2.20.24",
+    "react": "^15.5.3",
     "jquery": "^3.2.1",
     "ng2-datetime": "^1.4.0",
     "rxjs": "5.0.1",
