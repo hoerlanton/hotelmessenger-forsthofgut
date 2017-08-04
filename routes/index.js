@@ -148,16 +148,12 @@ router.post('/guestsMessage', function(req, res, next) {
         if (err) {
             errMsg = "Das senden der Nachricht ist nicht möglich. Es sind keine Gäste angemeldet.";
         } else {
-            var AllIds = function getAllIds(gaeste) {
-                return gaeste.senderId;
-            };
-
-            function myFunction() {
-                gaesteGlobalSenderID = gaeste.map(AllIds);
+            gaesteGlobalSenderID = [];
+            for(var l = 0; l < gaeste.length; l++){
+                if (gaeste[l].signed_up) {
+                    gaesteGlobalSenderID.push(gaeste[l].senderId);
+                }
             }
-
-            myFunction();
-            console.log("gaesteglobalSenderID:" + gaesteGlobalSenderID);
             broadcastMessages();
         }
     });
