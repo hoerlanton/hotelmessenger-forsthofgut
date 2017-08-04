@@ -13,7 +13,6 @@ import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/core';
 import '@angular/common';
-import 'babel-polyfill';
 
 import 'rxjs';
 
@@ -23,6 +22,7 @@ import '../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicke
 import '../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js';
 import '../../node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css';
 import '../../node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js';
+import 'babel-polyfill';
 
 
 @NgModule({
