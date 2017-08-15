@@ -53,11 +53,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-              <folding>
-                <element signature="e#17100#17248#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,9 +88,9 @@
       <find>uploadedFileNam</find>
       <find>salzbu</find>
       <find>salzburg</find>
-      <find>salzburgerhof</find>
       <find>test</find>
       <find>forsthofgut</find>
+      <find>salzburgerhof</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -245,12 +243,12 @@
       <workItem from="1502552718419" duration="267000" />
       <workItem from="1502556150772" duration="5981000" />
       <workItem from="1502715377003" duration="379000" />
-      <workItem from="1502795196840" duration="1662000" />
+      <workItem from="1502795196840" duration="1992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51178000" />
+    <option name="totallyTimeSpent" value="51508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,9 +349,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
           <caret line="106" column="67" lean-forward="false" selection-start-line="106" selection-start-column="67" selection-end-line="106" selection-end-column="67" />
-          <folding>
-            <element signature="e#17100#17248#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -446,9 +442,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
           <caret line="106" column="67" lean-forward="true" selection-start-line="106" selection-start-column="67" selection-end-line="106" selection-end-column="67" />
-          <folding>
-            <element signature="e#17100#17248#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -743,11 +737,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="e#17100#17248#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
