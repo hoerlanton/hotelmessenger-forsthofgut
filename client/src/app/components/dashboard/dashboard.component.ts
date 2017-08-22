@@ -20,10 +20,10 @@ export class DashboardComponent implements OnInit {
     title: string;
     dateGenerated: any;
     filesToUpload: Array<File> = [];
-    scheduledDate: Date = new Date(2016, 5, 10);
+    scheduledDate: Date = new Date(2017, 1, 1);
     scheduledMessages: Messages[];
     datepickerOpts = {
-        startDate: new Date(2016, 5, 10),
+        startDate: new Date(2017, 1, 1),
         autoclose: true,
         todayBtn: 'linked',
         todayHighlight: true,
@@ -96,7 +96,7 @@ export class DashboardComponent implements OnInit {
             .map(files => files.json()).map(res =>
             // 1st parameter is a flash message text
             // 2nd parameter is optional. You can pass object with options.
-            this._flashMessagesService.show('Datei wird angehängt. Einen Moment bitte... Sobald diese Meldung ausgeblendet wird, ist der Upload abgeschlossen.', { cssClass: 'alert-success', timeout: 20000 }),
+            this._flashMessagesService.show('Datei wurde angehängt und ist zum versenden bereit ...', { cssClass: 'alert-success', timeout: 20000 }),
         )
             .subscribe(files => console.log('files', files));
     }
